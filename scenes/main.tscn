@@ -1,6 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://wqowkdaccyal"]
+[gd_scene load_steps=3 format=3 uid="uid://wqowkdaccyal"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_nuewp"]
+[ext_resource type="Script" path="res://scripts/typing.gd" id="2_bmkdj"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_nuewp")
+
+[node name="TypingMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 328.0
+offset_bottom = 90.0
+script = ExtResource("2_bmkdj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TypingMenu"]
+layout_mode = 0
+offset_right = 172.0
+offset_bottom = 45.0
+bbcode_enabled = true
