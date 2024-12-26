@@ -1,4 +1,4 @@
-extends Node2D
+extends Node3D
 
 #This is a placeholder so git detects the folder changes.
 
