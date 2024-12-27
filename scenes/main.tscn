@@ -6,15 +6,15 @@
 [node name="Main" type="Node3D"]
 script = ExtResource("1_nuewp")
 
-[node name="TypingMenu" type="Control" parent="."]
+[node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 328.0
 offset_bottom = 90.0
 script = ExtResource("2_bmkdj")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TypingMenu"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
 layout_mode = 0
-offset_right = 172.0
-offset_bottom = 45.0
+offset_right = 949.0
+offset_bottom = 180.0
 bbcode_enabled = true
