@@ -29,9 +29,18 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and not event.is_pressed():
 		var key_typed = OS.get_keycode_string(event.keycode).to_lower()	
 		var next_key = prompt.substr(current_letter_index, 1).to_lower()
-	
+
+		# Let players include the spacebar if they want to, otherwise let them skip it
 		if next_key == " ":
-			current_letter_index += 1
+			var after_space_key = prompt.substr(current_letter_index + 1, 1).to_lower()
+
+			if key_typed == " ":
+				current_letter_index += 1 # Player included the space
+			elif key_typed == after_space_key:
+				current_letter_index += 2	 # Player omitted the space, skipped to the first letter
+				
+			_update_text()
+			return
 	
 		if key_typed == next_key:
 			print("success")
@@ -51,13 +60,12 @@ func _generate_name() -> String:
 	return first + " " + last
 	
 func _update_text() -> void:
-	var display_text = ""
-	
-	# This is a really dumb way to do this, change this later
-	for i in range(prompt.length()):
-		if i < current_letter_index:
-			display_text += "[color=green]" + prompt[i] + "[/color]"
-		else:
-			display_text += prompt[i]
+	if current_letter_index <= 0:
+		tenant_label.text = prompt
+		return
+			
+	var colored_substring = prompt.substr(0, current_letter_index) # From 0 to current_letter_index
+	var uncolored_substring = prompt.substr(current_letter_index) # From current_letter_index to prompt.size()
+	var display_text = "[color=green]" + colored_substring + "[/color]" + uncolored_substring
 	
 	tenant_label.text = display_text
