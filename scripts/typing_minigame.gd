@@ -23,52 +23,43 @@ var last_names = [
 	"Clark", "Lewis", "Robinson", "Walker", "Hall", "Young", "King", "Wright"
 ]
 
-@export var input_enabled: bool = true
+@export var input_enabled: bool = false
 @export var max_middle_names: int = 3
 
 var prompt: String = ""
 var player_input: String = ""
 var current_letter_index: int = 0
+var score: int = 0
+
 @onready var tenant_label: RichTextLabel = $RichTextLabel
 
-func _ready():
+func _ready() -> void:
 	prompt = _generate_name()
 	tenant_label.bbcode_enabled = true
 	_update_text()
 	
 func _unhandled_input(event: InputEvent) -> void:
-	if not input_enabled:
-		return
-		
-	if event is InputEventKey and not event.is_pressed():
+	if input_enabled and event is InputEventKey and not event.is_pressed():
 		if event.keycode < KEY_A or event.keycode > KEY_Z:
-			if event.keycode != KEY_SPACE:
-				return
+			return
 		
 		var key_typed = OS.get_keycode_string(event.keycode).to_lower()	
 		var next_key = prompt.substr(current_letter_index, 1).to_lower()
 	
 		if next_key == " ":
-			# Let players include the spacebar if they want to, otherwise let them skip it
-			var after_space_key = prompt.substr(current_letter_index + 1, 1).to_lower()
-
-			if key_typed == " ":
-				current_letter_index += 1 # Player included the space
-			elif key_typed == after_space_key:
-				current_letter_index += 2 # Player omitted the space, skipping to the first letter
-				
-			_update_text()
-			return
+			current_letter_index += 1
+			next_key = prompt.substr(current_letter_index, 1).to_lower()
 	
 		if key_typed == next_key:
-			print("success")
+			_update_score()
 			current_letter_index += 1
-		else:
-			print("failure")
+			print("success " + str(score))
 			
-		if current_letter_index >= prompt.length():
-			current_letter_index = 0
-			prompt = _generate_name()
+			if current_letter_index >= prompt.length():
+				current_letter_index = 0
+				prompt = _generate_name()
+		else:
+			print("failure " + str(score))
 			
 		_update_text()
 	
@@ -82,6 +73,9 @@ func _generate_name() -> String:
 		middle += " " + middle_names[randi() % middle_names.size()]
 	
 	return first + middle + last
+	
+func _update_score() -> void:
+	score += 10 # Temporary
 	
 func _update_text() -> void:
 	if current_letter_index <= 0:
