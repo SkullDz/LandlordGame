@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqr10n5eyfmmc"]
+
+[ext_resource type="Script" path="res://scripts/typing_minigame.gd" id="1_bhoa0"]
+
+[node name="TypingMinigame" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 328.0
+offset_bottom = 90.0
+script = ExtResource("1_bhoa0")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 949.0
+offset_bottom = 180.0
+bbcode_enabled = true
