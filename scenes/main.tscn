@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://wqowkdaccyal"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_nuewp"]
-[ext_resource type="PackedScene" uid="uid://bqr10n5eyfmmc" path="res://scenes/typing_minigame.tscn" id="2_i6cdk"]
+[ext_resource type="PackedScene" uid="uid://dk1cjy61duy5b" path="res://scenes/typing_minigame.tscn" id="2_i6cdk"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_nuewp")

@@ -25,19 +25,37 @@ var last_names = [
 
 @export var input_enabled: bool = false
 @export var max_middle_names: int = 3
+@export var maxtime: int = 7
 
 var prompt: String = ""
 var player_input: String = ""
 var current_letter_index: int = 0
+
 var score: int = 0
+var correct: int = 0
+var failures: int = 0
+var time: float = 0
 
 @onready var tenant_label: RichTextLabel = $RichTextLabel
 
 func _ready() -> void:
-	prompt = _generate_name()
-	tenant_label.bbcode_enabled = true
-	_update_text()
+	$ProgressBar.max_value = maxtime
+
+func _process(delta):
+	if input_enabled:
+		time += delta
+	$ProgressBar.value = float(maxtime)-time
 	
+	if correct != 0 and failures !=0:
+		$Accuracy.text = "Accuracy: " + str(round(float(correct)/(correct + failures)*100)) + "%"
+	else:
+		$Accuracy.text = "Accuracy: 100%"
+		
+	if time > 0:
+		$TimeBonus.text = "Time bonus: " + str(50-round(50 * time/maxtime))
+	else:
+		$TimeBonus.text = "Time bonus: 0"
+
 func _unhandled_input(event: InputEvent) -> void:
 	if input_enabled and event is InputEventKey and not event.is_pressed():
 		if event.keycode < KEY_A or event.keycode > KEY_Z:
@@ -51,18 +69,35 @@ func _unhandled_input(event: InputEvent) -> void:
 			next_key = prompt.substr(current_letter_index, 1).to_lower()
 	
 		if key_typed == next_key:
-			_update_score()
 			current_letter_index += 1
-			print("success " + str(score))
+			correct += 1
+			print("success " + str(correct))
 			
 			if current_letter_index >= prompt.length():
 				current_letter_index = 0
+				print(correct)
+				print(failures)
+				_update_score()
 				prompt = _generate_name()
 		else:
-			print("failure " + str(score))
+			failures += 1
+			print("failure " + str(failures))
 			
 		_update_text()
+
+func _update_score():
+	if time < 20.0:
+		var attempts:int = correct + failures
+		var rawscore:int = int(float(correct)/attempts*100)
+		var timebonus = 50-round(50 * time/maxtime)
+		score += rawscore + timebonus
 	
+	$Score.text = "Score: " + str(score)
+	
+	correct = 0
+	failures = 0
+	time = 0
+
 func _generate_name() -> String:
 	var first = first_names[randi() % first_names.size()]
 	var last = " " + last_names[randi() % last_names.size()]
@@ -74,9 +109,6 @@ func _generate_name() -> String:
 	
 	return first + middle + last
 	
-func _update_score() -> void:
-	score += 10 # Temporary
-	
 func _update_text() -> void:
 	if current_letter_index <= 0:
 		tenant_label.text = prompt
@@ -87,3 +119,10 @@ func _update_text() -> void:
 	var display_text = "[color=green]" + colored_substring + "[/color]" + uncolored_substring
 	
 	tenant_label.text = display_text
+
+func _on_button_pressed():
+	$Button.hide()
+	prompt = _generate_name()
+	tenant_label.bbcode_enabled = true
+	_update_text()
+	input_enabled = true
