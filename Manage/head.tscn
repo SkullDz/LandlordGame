@@ -33,4 +33,5 @@ size = 0.035
 
 [node name="Dither" type="MeshInstance3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.08879)
+visible = false
 mesh = SubResource("QuadMesh_c5ll7")
