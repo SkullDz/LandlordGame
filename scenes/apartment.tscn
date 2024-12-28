@@ -1,0 +1,1016 @@
+[gd_scene load_steps=8 format=3 uid="uid://cdbr0ky4d6pof"]
+
+[ext_resource type="Texture2D" uid="uid://de7p7ycehj63i" path="res://Textures/TempTextures/Pixel 32x32/9.png" id="1_fdorb"]
+[ext_resource type="PackedScene" uid="uid://6d27ul2h641w" path="res://Manage/player.tscn" id="2_mmqls"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5bkkc"]
+albedo_color = Color(0.662452, 0.662452, 0.662452, 1)
+albedo_texture = ExtResource("1_fdorb")
+uv1_scale = Vector3(0.905, 0.905, 0.905)
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7lpel"]
+size = Vector3(102.699, 0.161865, 100.939)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lxs55"]
+albedo_color = Color(0.136826, 0.136826, 0.136826, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3jd2y"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Environment" id="Environment_6phuy"]
+
+[node name="Apartment" type="Node3D"]
+
+[node name="Build" type="Node3D" parent="."]
+
+[node name="Floor" type="CSGBox3D" parent="Build"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.391724, 0, 6.32855)
+size = Vector3(109.136, 0.133789, 108.128)
+material = SubResource("StandardMaterial3D_5bkkc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Build/Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Build/Floor/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.24937, 0, 2.729)
+shape = SubResource("BoxShape3D_7lpel")
+
+[node name="Floor3" type="CSGBox3D" parent="Build"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14444, 4.74788, 1.0117)
+size = Vector3(112.25, 0.133789, 121.153)
+material = SubResource("StandardMaterial3D_lxs55")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Build/Floor3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Build/Floor3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.24937, 0, 2.729)
+shape = SubResource("BoxShape3D_7lpel")
+
+[node name="Floor2" type="CSGBox3D" parent="Build"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -52.069)
+size = Vector3(16.928, 0.133789, 8.66797)
+material = SubResource("StandardMaterial3D_5bkkc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Build/Floor2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Build/Floor2/StaticBody3D"]
+shape = SubResource("BoxShape3D_7lpel")
+
+[node name="CentralWall" type="CSGBox3D" parent="Build"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00396156, 2.14395, 0.473261)
+size = Vector3(111.481, 5.25372, 119.334)
+
+[node name="Wall4" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -52.3484)
+operation = 2
+size = Vector3(16.1924, 5.25372, 8.91752)
+
+[node name="Wall5" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.69462)
+operation = 2
+size = Vector3(5.12109, 5.25372, 105.863)
+
+[node name="Wall6" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.2948, 0, -10.599)
+operation = 2
+size = Vector3(51.4937, 5.254, 5.121)
+
+[node name="Wall9" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5423, 0, -31.8591)
+operation = 2
+size = Vector3(51.4937, 5.254, 5.121)
+
+[node name="Wall10" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5423, 0, 3.00498)
+operation = 2
+size = Vector3(51.4937, 5.254, 5.121)
+
+[node name="Wall11" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -28.7399, 0, -20.2029)
+operation = 2
+size = Vector3(51.4937, 5.254, 5.121)
+
+[node name="Wall7" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 28.2948, 0, 25.1779)
+operation = 2
+size = Vector3(66.7612, 5.254, 5.121)
+
+[node name="Wall8" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 28.2948, 0, 26.1602)
+operation = 2
+size = Vector3(51.4937, 5.254, 5.121)
+
+[node name="RoomCutout" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.6698, -0.463687, -2.65184)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout54" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.6698, -0.463687, -22.4211)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout54"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout55" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.6698, -0.463687, -29.88)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout55"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout56" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.6698, -0.463687, -37.5147)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout56"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout57" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -2.66217, -0.463687, -39.9939)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout57"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout2" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.6698, -0.463687, 5.46457)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout3" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.6698, -0.463687, 13.5753)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout4" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.6698, -0.463687, 21.4445)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout63" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -26.1051, -0.463687, -8.98227)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout63"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout64" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -26.1051, -0.463687, -16.3717)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout64"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout65" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -26.1051, -0.463687, -23.7588)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout65"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout13" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.6345, -0.463687, 18.1675)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout26" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.9359, -0.463687, 23.4859)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout26"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout27" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 43.4941, -0.463687, 23.4859)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout27"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout28" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 51.2826, -0.463687, 23.4859)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout28"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout29" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.3261, -0.463687, 28.8092)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout29"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout30" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.6954, -0.463687, 28.8092)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout30"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout31" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.6517, -0.463687, 28.8092)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout31"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.386368, 0.788774, 3.39301)
+size = Vector3(4.2377, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout68" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 50.8093, -0.463687, -13.2735)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout68"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.386368, 0.788774, 3.39301)
+size = Vector3(4.2377, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout14" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.6345, -0.463687, 10.0511)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout15" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.6345, -0.463687, 1.94038)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout36" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.6345, -0.463687, 30.6668)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout36"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout37" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.6345, -0.463687, 38.0952)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout37"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout38" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.6345, -0.463687, 45.4249)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout38"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout39" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.6345, -0.463687, 52.8651)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout39"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout16" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.6345, -0.463687, -5.92882)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout40" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.63055, -0.463687, 31.9416)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout40"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout41" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.63055, -0.463687, 23.8252)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout41"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout42" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.63055, -0.463687, 15.7145)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout42"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout43" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.63055, -0.463687, 7.84534)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout43"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout45" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.63055, -0.463687, 55.8836)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout45"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67617, 0.788774, 3.39301)
+size = Vector3(5.41542, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout46" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.63055, -0.463687, 47.7729)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout46"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout47" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.63055, -0.463687, 39.9037)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout47"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout17" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7514, -0.463687, -7.93484)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout69" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.67703, -0.463687, -11.8735)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout69"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout70" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.67703, -0.463687, -19.4757)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout70"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout71" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -31.3987, -0.463687, -19.5957)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout71"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout72" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -31.3987, -0.463687, -27.1979)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout72"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout73" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -31.3987, -0.463687, -4.98881)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout73"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout74" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -31.3987, -0.463687, -12.591)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout74"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout48" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.958, -0.463687, 5.65772)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout48"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout49" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.4608, -0.463687, 5.65772)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout49"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout50" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.0725, -0.463687, 5.65772)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout50"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout51" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.5753, -0.463687, 5.65772)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout51"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout52" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.987, -0.463687, 5.65772)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout52"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout53" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7952, -0.463687, 5.65772)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout53"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53786, 0.788774, 3.39301)
+size = Vector3(6.53018, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout75" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, -47.81, -0.463687, 0.279181)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout75"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout76" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, -41.0018, -0.463687, 0.279181)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout76"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53786, 0.788774, 3.39301)
+size = Vector3(6.53018, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout44" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7514, -0.463687, 28.823)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout44"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout18" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 8.03637, -0.463687, -13.2544)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout61" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12.1113, -0.463687, -34.5219)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout61"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout66" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -16.7654, -0.463687, -29.2299)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout66"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout67" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -8.99863, -0.463687, -29.2299)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout67"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout77" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -51.4387, -0.463687, -29.1902)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout77"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout78" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -43.6719, -0.463687, -29.1902)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout78"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout79" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-1, 0, 2.83122e-07, 0, 1, 0, -2.83122e-07, 0, -1, -42.637, -0.463687, -34.5266)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout79"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout81" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-1, 0, 2.83122e-07, 0, 1, 0, -2.83122e-07, 0, -1, -35.272, -0.463687, -34.5266)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout81"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout82" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-1, 0, 2.83122e-07, 0, 1, 0, -2.83122e-07, 0, -1, -28.7826, -0.463685, -46.0433)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout82"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout80" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-1, 0, 2.83122e-07, 0, 1, 0, -2.83122e-07, 0, -1, -50.4037, -0.463687, -34.5266)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout80"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout62" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -20.1735, -0.463687, -34.5219)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout62"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout58" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.63763, -0.463687, 0.364411)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout58"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout59" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12.5093, -0.463687, 0.364411)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout59"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout60" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -20.2873, -0.463687, 0.364411)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout60"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout19" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.7364, -0.463687, -13.2544)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout19"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout20" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 23.3999, -0.463687, -13.2544)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout20"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout21" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 31.0305, -0.463687, -13.2544)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout21"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout22" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 38.729, -0.463687, -13.2544)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout22"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout23" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 46.4692, -0.463687, -13.2544)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout23"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout24" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 40.027, -0.463687, -7.94581)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout24"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout25" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 47.4645, -0.463687, -7.94581)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout25"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout9" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 30.9607, -0.463687, 21.6283)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout33" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 30.9607, -0.463687, 41.508)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout33"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout34" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 30.9607, -0.463687, 49.1005)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout34"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout35" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 30.9607, -0.463687, 56.4662)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout35"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout32" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 30.9607, -0.463687, 34.1339)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout32"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 2.46541)
+size = Vector3(6.88849, 4.7789, 4.70287)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout10" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 30.9607, -0.463687, 13.5216)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout11" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 30.9607, -0.463687, 5.54633)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout12" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 30.9607, -0.463687, -2.43574)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout5" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.6698, -0.463687, 34.1663)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout6" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.6698, -0.463687, 41.7032)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout7" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.6698, -0.463687, 49.0909)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="RoomCutout8" type="CSGBox3D" parent="Build/CentralWall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.6698, -0.463687, 56.4283)
+operation = 2
+size = Vector3(1.95605, 3.20135, 0.233276)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="R2" type="CSGBox3D" parent="Build/CentralWall/RoomCutout8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71701, 0.788774, 3.39301)
+size = Vector3(6.88849, 4.7789, 6.55808)
+material = SubResource("StandardMaterial3D_3jd2y")
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="Enviroment" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Enviroment"]
+environment = SubResource("Environment_6phuy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Enviroment/WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, -0.0656295, 0.997844, 0, -0.997844, -0.0656295, 0, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_mmqls")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.63939, 0)
